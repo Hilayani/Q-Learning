@@ -95,7 +95,7 @@ class NavegadorNucleos:
 
 # -------- STREAMLIT UI --------
 
-st.title("🚀 Navegador de Núcleos con Q-Learning")
+st.title("Navegador de Núcleos con Q-Learning")
 
 navegador = NavegadorNucleos()
 
@@ -109,4 +109,5 @@ if st.button("Buscar ruta óptima"):
         st.success("Ruta encontrada:")
         st.write(" → ".join(ruta))
     else:
+
         st.error("No existe un camino entre esos núcleos.")
