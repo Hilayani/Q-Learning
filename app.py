@@ -97,6 +97,17 @@ class NavegadorNucleos:
 
 st.title("Navegador de Núcleos con Q-Learning")
 
+st.subheader("📎 Adjuntar mapa de nodos")
+
+archivo_mapa = st.file_uploader(
+    "Sube una imagen del mapa (PNG o JPG)",
+    type=["png", "jpg", "jpeg"]
+)
+
+if archivo_mapa is not None:
+    st.success("Mapa cargado correctamente ✅")
+    st.image(archivo_mapa, caption="Mapa de los nodos", use_container_width=True)
+
 navegador = NavegadorNucleos()
 
 inicio = st.selectbox("Núcleo inicial", navegador.nombres_nucleos)
@@ -111,3 +122,4 @@ if st.button("Buscar ruta óptima"):
     else:
 
         st.error("No existe un camino entre esos núcleos.")
+
